@@ -1,41 +1,41 @@
 #include <stdio.h>
 
+// Medidor de distância/comprimento
 void converterComprimento(double valor, int unidade) {
-    double fatores[7] = {1000, 100, 10, 1, 0.1, 0.01, 0.001}; // distancia em metros
-    char *nomes[7] = {"km", "hm", "dam", "m", "dm", "cm", "mm"};
+    double distancias[4] = {1000, 1, 0.01, 0.001};
+    char *quantidade[4] = {"km","m","cm","mm"};
 
-    double metros = valor * fatores[unidade];
+    double metros = valor * distancias[unidade];
 
-    printf("\n%.2f %s convertido:\n", valor, nomes[unidade]);
-    for (int i = 0; i < 7; i++) {
-        double convertido = metros / fatores[i];
-        printf("%10.5f %s\n", convertido, nomes[i]);
+    for(int i = 0; i < 4; i++) {
+        double convertido = metros / distancias[i];
+        printf("%.2f %s\n", convertido, quantidade[i]);
     }
 }
 
+// Conversor de Peso/massa
 void converterMassa(double valor, int unidade) {
-    double fatores[3] = {1000, 1, 0.001}; // peso em gramas
-    char *nomes[3] = {"kg", "g", "mg"};
+    double pesos[3] = {1000, 1, 0.001};
+    char *pesagens[3] = {"kg","g","mg"};
 
-    double gramas = valor * fatores[unidade];
+    double gramas = valor * pesos[unidade];
 
-    printf("\n%.2f %s convertido:\n", valor, nomes[unidade]);
-    for (int i = 0; i < 3; i++) {
-        double convertido = gramas / fatores[i];
-        printf("%10.5f %s\n", convertido, nomes[i]);
+    for(int i = 0; i < 3; i++) {
+        double convertido = gramas / pesos[i];
+        printf("%.2f %s\n", convertido, pesagens[i]);
     }
 }
 
+// Conversor de Tempo
 void converterTempo(double valor, int unidade) {
-    double fatores[3] = {3600, 60, 1}; // tudo em segundos
-    char *nomes[3] = {"h", "min", "s"};
+    double tempos[3] = {3600, 60, 1};
+    char *unidades[3] = {"h","min","s"};
 
-    double segundos = valor * fatores[unidade];
+    double segundos = valor * tempos[unidade];
 
-    printf("\n%.2f %s convertido:\n", valor, nomes[unidade]);
-    for (int i = 0; i < 3; i++) {
-        double convertido = segundos / fatores[i];
-        printf("%10.5f %s\n", convertido, nomes[i]);
+    for(int i=0; i<3; i++) {
+        double convertido = segundos / tempos[i];
+        printf("%.2f %s\n", convertido, unidades[i]);
     }
 }
 
@@ -43,64 +43,43 @@ int main() {
     int opcao, unidade, continuar = 1;
     double valor;
 
-    while (continuar == 1) {
-        printf("\n=== Conversor de Medidas ===\n");
-        printf("1 - Comprimento (km, hm, dam, m, dm, cm, mm)\n");
-        printf("2 - Massa (kg, g, mg)\n");
-        printf("3 - Tempo (h, min, s)\n");
-        printf("0 - Sair\n");
-        printf("Escolha uma opção: ");
+    while(continuar == 1) {
+        printf("1-Comprimento  2-Massa  3-Tempo  0-Sair\n");
         scanf("%d", &opcao);
 
-        if (opcao == 1) {
-            printf("\n0 - km\n1 - hm\n2 - dam\n3 - m\n4 - dm\n5 - cm\n6 - mm\n");
-            printf("Escolha a unidade de entrada: ");
+        if(opcao == 1) {
+            printf("0-km 1-m 2-cm 3-mm\n");
             scanf("%d", &unidade);
-            if (unidade >= 0 && unidade < 7) {
-                printf("Digite o valor: ");
+            if(unidade >= 0 && unidade < 4) {
                 scanf("%lf", &valor);
                 converterComprimento(valor, unidade);
-            } else {
-                printf("Unidade inválida!\n");
             }
-        } 
-        else if (opcao == 2) {
-            printf("\n0 - kg\n1 - g\n2 - mg\n");
-            printf("Escolha a unidade de entrada: ");
+        }
+        else if(opcao == 2) {
+            printf("0-kg 1-g 2-mg\n");
             scanf("%d", &unidade);
-            if (unidade >= 0 && unidade < 3) {
-                printf("Digite o valor: ");
+            if(unidade >= 0 && unidade < 3) {
                 scanf("%lf", &valor);
                 converterMassa(valor, unidade);
-            } else {
-                printf("Unidade inválida!\n");
             }
-        } 
-        else if (opcao == 3) {
-            printf("\n0 - h\n1 - min\n2 - s\n");
-            printf("Escolha a unidade de entrada: ");
+        }
+        else if(opcao == 3) {
+            printf("0-h 1-min 2-s\n");
             scanf("%d", &unidade);
-            if (unidade >= 0 && unidade < 3) {
-                printf("Digite o valor: ");
+            if(unidade >= 0 && unidade < 3) {
                 scanf("%lf", &valor);
                 converterTempo(valor, unidade);
-            } else {
-                printf("Unidade inválida!\n");
             }
-        } 
-        else if (opcao == 0) {
+        }
+        else if(opcao == 0) {
             continuar = 0;
-        } 
-        else {
-            printf("Opção inválida!\n");
         }
 
-        if (opcao != 0) {
-            printf("\nDeseja converter outro valor? (1=Sim, 0=Não): ");
+        if(opcao != 0) {
+            printf("1-Continuar 0-Sair\n");
             scanf("%d", &continuar);
         }
     }
 
-    printf("Encerrando o programa...\n");
     return 0;
 }
