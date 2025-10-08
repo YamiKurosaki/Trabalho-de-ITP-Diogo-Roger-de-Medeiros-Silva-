@@ -1,0 +1,3 @@
+O programa é similar ao da questão anteiror, será gerado um padrão no formato triangular que depende do n expresso inicialmente.
+Porém, a mudança é que no segundo for ( o que é utilizado j), a sequencia sofrerá um decrescimento
+O padrão não crescerá nas pontas, ele diminuirá de acordo com o numero atribuido a "n" e no primeiro valor da linha, estará o maior valor.

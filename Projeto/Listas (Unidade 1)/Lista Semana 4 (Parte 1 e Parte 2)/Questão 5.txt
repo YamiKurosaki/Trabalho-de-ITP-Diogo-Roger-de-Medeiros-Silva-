@@ -1,0 +1,3 @@
+  O programa irá fazer um laço for que imprimirá na primeira linha os números 0,1,2 e 3. 
+  Em seguida ele fará outro for, que será realizado a repetição do sistema até o número de vezes escrito 
+  (nesse caso o programa irá repetir 4 vezes o que foi impresso na primeira linha).

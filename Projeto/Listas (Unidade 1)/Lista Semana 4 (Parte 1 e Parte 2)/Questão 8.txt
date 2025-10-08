@@ -1,0 +1,4 @@
+Este programa imprimirá uma matriz de números, onde n define o tamanho da grade (n linhas por n colunas). 
+O valor em cada posição da grade é a soma dos contadores dos laços for utilizados
+(em que o laço for com "i" controlará as linhas da matriz, e o for com "j" controlará o número de colunas).
+Lembrando que os valores de a11, a12 e entre outros serão a soma de i e j de acordo com a posição estabelecida.

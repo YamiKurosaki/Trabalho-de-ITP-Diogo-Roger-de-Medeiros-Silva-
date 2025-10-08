@@ -1,0 +1,4 @@
+Esse código gerará um padrão no formato de um triangulo, na qual, o tamanho desse padrão é determinado pelo valor de "n".
+O código realizará um laço for externo com i, em que será controlado o número de linhas que serão impressas.
+Também será realizado um laço for com j, que dirá o número de vezes que o for acontecerá.
+
