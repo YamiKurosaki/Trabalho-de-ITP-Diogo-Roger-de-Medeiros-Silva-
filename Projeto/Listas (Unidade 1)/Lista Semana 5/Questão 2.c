@@ -23,8 +23,6 @@ int main() {
             printf("(%d, %d, %d)\n", x, x + 2, x + 6);
         }
     }
-
-    printf("Busca finalizada.\n");
-
+    
     return 0;
 }
