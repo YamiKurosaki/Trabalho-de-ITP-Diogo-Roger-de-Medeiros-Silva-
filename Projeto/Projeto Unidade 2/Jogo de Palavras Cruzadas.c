@@ -41,7 +41,7 @@ void mostrarTabuleiro(char tab[TAMANHO][TAMANHO]) {
 
 // Coloca uma palavra no tabuleiro
 void preencherPalavra(char tab[TAMANHO][TAMANHO], PalavraInfo p) {
-    for (int i = 0; i < strlen(p.palavra); i++) {
+    for (int i = 0; i < (int)strlen(p.palavra); i++) {
         if (p.direcao == 'H')
             tab[p.linha][p.coluna + i] = p.palavra[i];
         else
@@ -58,7 +58,7 @@ void stringMaiuscula(char *s) {
 
 int main() {
     char tabuleiro[TAMANHO][TAMANHO];
-    iniciarTabuleiro(tabuleiro);
+    inicializarTabuleiro(tabuleiro);
 
     // Lista de palavras da cruzadinha
     PalavraInfo lista[QTD_PALAVRAS] = {
